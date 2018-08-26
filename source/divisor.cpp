@@ -3,15 +3,22 @@
 
 using namespace std;
 
-std::vector<unsigned int> divisorHelper::getDivisors(unsigned int p_number)
+std::vector<unsigned> divisorHelper::getDivisors(unsigned p_number)
 {
-    std::vector<unsigned int> retVal;
+    std::vector<unsigned> retVal;
     if (p_number==1)
         retVal.push_back(1);
-    for(unsigned int i=1;i<p_number;i++)
+    else
     {
-        if (p_number % i == 0)
-            retVal.push_back(i);
+        for(unsigned i=1;i<=sqrt(p_number);i++)
+        {
+            if (p_number % i == 0)
+            {
+                retVal.push_back(i);
+                if (p_number/i != i && i != 1)
+                    retVal.push_back(p_number/i);
+            }
+        }
     }
     return retVal;
 }

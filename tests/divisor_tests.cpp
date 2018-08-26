@@ -33,7 +33,7 @@ TEST(getDivisors, Number12_Get5Divisors)
     ASSERT_EQ(actual.size(), 5);
     ASSERT_EQ(actual[0], 1);
     ASSERT_EQ(actual[1], 2);
-    ASSERT_EQ(actual[2], 3);
-    ASSERT_EQ(actual[3], 4);
-    ASSERT_EQ(actual[4], 6);
+    ASSERT_EQ(actual[2], 6);
+    ASSERT_EQ(actual[3], 3);
+    ASSERT_EQ(actual[4], 4);
 }

@@ -11,9 +11,21 @@ int main(int argc, char const *argv[])
 {
     cout << "Prime factors of a number" << endl;
     unsigned number = GetInputNumber("Enter the number : ");
-
-    cout << "Press any key to continue... " << endl;
-    getch();
+    vector<unsigned> divisors = divisorHelper::getDivisors(number);
+    unsigned primeFactorCount {0};
+    for(auto it: divisors)
+    {
+        if (prime::isPrime(it))
+        {
+            if (primeFactorCount > 0)
+                cout << ", ";
+            cout << it;
+            primeFactorCount++;
+        }
+    }
+    cout << endl;
+    //cout << "Press any key to continue... " << endl;
+    //getch();
     return 0;
 }
 
