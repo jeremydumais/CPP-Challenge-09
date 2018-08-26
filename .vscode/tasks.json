@@ -1,0 +1,51 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build exercices",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g",
+                "-std=c++1y",
+                "main.cpp",
+                "source\\prime.cpp",
+                "source\\divisor.cpp"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "build tests",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g",
+                "-std=c++1y",
+                "-I",
+                "d:/Programmation/GoogleTest/googletest/include",
+                "-L",
+                "d:/Programmation/GoogleTest/googletest/lib",
+                "tests/prime_tests.cpp",
+                "tests/divisor_tests.cpp",
+                "source/prime.cpp",
+                "source/divisor.cpp",
+                "-lgtest_main", 
+                "-lpthread",
+                "-o",
+                "tests.exe"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "build and run program (without debug)",
+            "type": "shell",
+            "command": "a.exe"
+        }
+    ]
+}
